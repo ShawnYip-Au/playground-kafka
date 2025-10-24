@@ -6,7 +6,7 @@
     - Check that Kafka container is running: ```docker ps```
     - https://github.com/apache/kafka/tree/trunk/docker/examples
 
-2. Create a topic via a *broker*
+2. Create a topic via a *broker* (optional)
     ```
     # -------------------------------------------
     # Command to create a Kafka topic inside a Docker container
@@ -38,3 +38,6 @@
         --bootstrap-server localhost:9092
     ```
 
+3. Start producer
+    - `toto-jackpot-producer` > `./gradlew bootRun`
+    - Swagger Ui: http://localhost:8080/swagger-ui/index.html

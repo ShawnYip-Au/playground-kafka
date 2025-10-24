@@ -2,3 +2,6 @@ services:
     kafka:
         image: apache/kafka:latest
         container_name: kafka
+        ports:
+            - "9092:9092"  # map localhost:9092 → kafka-container:9092
+

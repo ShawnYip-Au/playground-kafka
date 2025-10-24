@@ -20,22 +20,21 @@
     # 6.     Number of broker replicas
     # -------------------------------------------
 
-    docker exec -it kafka /opt/kafka/bin/kafka-topics.sh \
+    docker exec -it kafka opt/kafka/bin/kafka-topics.sh \
         --create \
         --topic my-topic \
         --bootstrap-server localhost:9092 \
         --partitions 3 \
         --replication-factor 1
 
-    docker exec -it kafka /opt/kafka/bin/kafka-topics.sh \
+
+    docker exec -it kafka opt/kafka/bin/kafka-topics.sh \
         --list \
         --bootstrap-server localhost:9092
 
-    docker exec -it kafka /opt/kafka/bin/kafka-topics.sh \
-    --list \
-    --bootstrap-server localhost:9092
-
-    docker exec -it kafka /opt/kafka/bin/kafka-topics.sh --describe --topic my-topic --bootstrap-server localhost:9092
-
+    docker exec -it kafka opt/kafka/bin/kafka-topics.sh \
+        --describe \
+        --topic my-topic \
+        --bootstrap-server localhost:9092 \
     ```
 

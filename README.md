@@ -35,6 +35,6 @@
     docker exec -it kafka opt/kafka/bin/kafka-topics.sh \
         --describe \
         --topic my-topic \
-        --bootstrap-server localhost:9092 \
+        --bootstrap-server localhost:9092
     ```
 

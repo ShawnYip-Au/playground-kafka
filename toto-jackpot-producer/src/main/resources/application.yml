@@ -1,6 +1,6 @@
 spring:
     application:
-        name: toto-jackpot
+        name: toto-jackpot-producer
     kafka:
         bootstrap-servers: localhost:9092
         producer:

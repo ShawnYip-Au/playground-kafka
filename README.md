@@ -4,3 +4,6 @@
     - Use *docker-compose.yml* from the current directory
     - Start the service(s) in the background (detached)
     - Check that Kafka container is running: ```docker ps```
+    - https://github.com/apache/kafka/tree/trunk/docker/examples
+
+

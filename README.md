@@ -39,5 +39,15 @@
     ```
 
 3. Start producer
-    - `toto-jackpot-producer` > `./gradlew bootRun`
+    - Open `toto-jackpot-producer` > `./gradlew bootRun`
     - Swagger Ui: http://localhost:8080/swagger-ui/index.html
+
+    ```
+    docker exec -it kafka opt/kafka/bin/kafka-console-consumer.sh \
+        --bootstrap-server localhost:9092 \
+        --topic jackpot-topic \
+        --from-beginning \
+        --property print.partition=true \
+        --property print.offset=true \
+        --property print.timestamp=true
+    ```

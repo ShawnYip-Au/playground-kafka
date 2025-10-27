@@ -2,6 +2,7 @@
 
 [Kafka Documentation](https://kafka.apache.org/documentation.html)<br>
 [Spring Kafka Documentation](https://spring.io/projects/spring-kafka#overview)<br>
+[Consumer Group IDs](https://www.confluent.io/blog/configuring-apache-kafka-consumer-group-ids)<br>
 
 1. Start Kafka inside Docker: ```docker compose up -d```
     - Use *docker-compose.yml* from the current directory

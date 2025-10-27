@@ -42,6 +42,9 @@
     - Open `toto-jackpot-producer` > `./gradlew bootRun`
     - Swagger Ui: http://localhost:8080/swagger-ui/index.html
 
+4. Start consumer
+    - Open `buying-agent-consumer` > `./gradlew bootRun`
+    - Alternatively, 
     ```
     docker exec -it kafka opt/kafka/bin/kafka-console-consumer.sh \
         --bootstrap-server localhost:9092 \
@@ -51,3 +54,4 @@
         --property print.offset=true \
         --property print.timestamp=true
     ```
+

@@ -1,6 +1,7 @@
 # playground-kafka
 
 [Kafka Documentation](https://kafka.apache.org/documentation.html)<br>
+[Kafka API](https://kafka.apache.org/21/javadoc/org/apache/kafka)<br>
 [Spring Kafka Documentation](https://spring.io/projects/spring-kafka#overview)<br>
 [Consumer Group IDs](https://www.confluent.io/blog/configuring-apache-kafka-consumer-group-ids)<br>
 

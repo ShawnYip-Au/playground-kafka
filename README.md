@@ -1,6 +1,7 @@
 # playground-kafka
 
 [Kafka Documentation](https://kafka.apache.org/documentation.html)
+[Spring Kafka Documentation](https://spring.io/projects/spring-kafka#overview)
 
 1. Start Kafka inside Docker: ```docker compose up -d```
     - Use *docker-compose.yml* from the current directory

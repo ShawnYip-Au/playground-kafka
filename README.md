@@ -60,3 +60,5 @@
         --property print.timestamp=true
     ```
 
+## sasl_plaintext/scram authentication (client -> broker)
+

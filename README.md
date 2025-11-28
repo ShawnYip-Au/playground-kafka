@@ -60,5 +60,36 @@
         --property print.timestamp=true
     ```
 
-## sasl_plaintext/scram authentication (client -> broker)
+## sasl_plaintext/scram authentication (client → broker)
+
+KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT_HOST:SASL_PLAINTEXT
+KAFKA_SASL_ENABLED_MECHANISMS: SCRAM-SHA-256
+KAFKA_LISTENER_NAME_PLAINTEXT__HOST_SCRAM___SHA___256_SASL_JAAS_CONFIG: 'org.apache.kafka.common.security.scram.ScramLoginModule required;'
+
+
+```
+# Command to create a user w/ (username="mskdev", password="mskdev-secret") inside kafka cluster
+#
+# Steps:
+# 1. Runs 'kafka-topics.sh' inside running 'kafka' container
+# 2. Connect to broker's internal listener (KRaft/Admin API)
+# 3. perform an alteration (apply the config change)
+# 4. add SCRAM-SHA-256 credential with the given password
+# 5. the type of entity we are changing (a user principal)
+# 6. the username / principal to create or alter
+#
+/opt/kafka/bin/kafka-configs.sh \
+  --bootstrap-server localhost:19092 \
+  --alter \
+  --add-config 'SCRAM-SHA-256=[password="mskdev-secret"]' \
+  --entity-type users \
+  --entity-name mskdev
+
+/opt/kafka/bin/kafka-configs.sh \
+  --bootstrap-server localhost:19092 \
+  --describe \
+  --entity-type users \
+  --entity-name "mskdev"
+```
+
 

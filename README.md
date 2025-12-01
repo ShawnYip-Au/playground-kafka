@@ -92,4 +92,34 @@ KAFKA_LISTENER_NAME_PLAINTEXT__HOST_SCRAM___SHA___256_SASL_JAAS_CONFIG: 'org.apa
   --entity-name "mskdev"
 ```
 
+```
+docker compose exec kafka-broker-1 bash -c "/opt/kafka/bin/kafka-configs.sh --bootstrap-server localhost:19092 --alter --add-config 'SCRAM-SHA-256=[password=\"mskdev-secret\"]' --entity-type users --entity-name mskdev"
+
+docker compose exec kafka-broker-1 bash -c "/opt/kafka/bin/kafka-configs.sh --bootstrap-server localhost:19092 --describe --entity-type users --entity-name mskdev"
+
+# Broker 1
+docker exec -it hcc3-event-consumer-kafka-broker-1-1 /opt/kafka/bin/kafka-configs.sh \
+  --bootstrap-server localhost:19092 \
+  --alter \
+  --add-config 'SCRAM-SHA-256=[password=mskdev-secret]' \
+  --entity-type users \
+  --entity-name mskdev
+
+# Broker 2
+docker exec -it hcc3-event-consumer-kafka-broker-2-1 /opt/kafka/bin/kafka-configs.sh \
+  --bootstrap-server localhost:19092 \
+  --alter \
+  --add-config 'SCRAM-SHA-256=[password=mskdev-secret]' \
+  --entity-type users \
+  --entity-name mskdev
+
+# Broker 3
+docker exec -it hcc3-event-consumer-kafka-broker-3-1 /opt/kafka/bin/kafka-configs.sh \
+  --bootstrap-server localhost:19092 \
+  --alter \
+  --add-config 'SCRAM-SHA-256=[password=mskdev-secret]' \
+  --entity-type users \
+  --entity-name mskdev
+```
+
 
